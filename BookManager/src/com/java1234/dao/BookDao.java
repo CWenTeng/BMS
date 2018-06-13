@@ -8,14 +8,14 @@ import com.java1234.model.Book;
 import com.java1234.util.StringUtil;
 
 /**
- * Í¼ÊéDaoÀà
+ * å›¾ä¹¦Daoç±»
  * @author s1841
  *
  */
 public class BookDao {
 
 	/**
-	 * Í¼ÊéÌí¼Ó
+	 * å›¾ä¹¦æ·»åŠ 
 	 * @param con
 	 * @param book
 	 * @return
@@ -36,7 +36,7 @@ public class BookDao {
 
 
 	/**
-	 * Í¼ÊéĞÅÏ¢²éÑ¯
+	 * å›¾ä¹¦ä¿¡æ¯æŸ¥è¯¢
 	 * @param con
 	 * @param book
 	 * @return
@@ -60,7 +60,7 @@ public class BookDao {
 
 
 	/**
-	 * Í¼ÊéĞÅÏ¢²éÑ¯
+	 * å›¾ä¹¦ä¿¡æ¯æŸ¥è¯¢
 	 * @param con
 	 * @param book
 	 * @return
@@ -84,7 +84,7 @@ public class BookDao {
 
 
 	/**
-	 *Í¼ÊéĞÅÏ¢É¾³ı	 
+	 *å›¾ä¹¦ä¿¡æ¯åˆ é™¤
 	 * @param con
 	 * @param id
 	 * @return
@@ -99,7 +99,7 @@ public class BookDao {
 
 
 	/**
-	 * Í¼ÊéĞÅÏ¢ĞŞ¸Ä
+	 * å›¾ä¹¦ä¿¡æ¯ä¿®æ”¹
 	 * @param con
 	 * @param book
 	 * @return
@@ -120,7 +120,7 @@ public class BookDao {
 
 
 	/**
-	 * Ö¸¶¨Í¼ÊéÀà±ğÏÂÊÇ·ñ´æÔÚÍ¼Êé
+	 * æŒ‡å®šå›¾ä¹¦ç±»åˆ«ä¸‹æ˜¯å¦å­˜åœ¨å›¾ä¹¦
 	 * @param con
 	 * @param bookTypeId
 	 * @return

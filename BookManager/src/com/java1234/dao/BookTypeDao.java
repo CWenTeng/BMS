@@ -9,13 +9,13 @@ import com.java1234.model.User;
 import com.java1234.util.StringUtil;
 
 /**
- * Í¼ÊéÀà±ğDaoÀà
+ * å›¾ä¹¦ç±»åˆ«Daoç±»
  * @author s1841
  *
  */
 public class BookTypeDao {
 	/**
-	 * Í¼ÊéÀà±ğÌí¼Ó
+	 * å›¾ä¹¦ç±»åˆ«æ·»åŠ 
 	 * @param con
 	 * @param bookType
 	 * @return
@@ -32,7 +32,7 @@ public class BookTypeDao {
 
 
 	/**
-	 * ²éÑ¯Í¼ÊéÀà±ğ¼¯ºÏ
+	 * æŸ¥è¯¢å›¾ä¹¦ç±»åˆ«é›†åˆ
 	 * @param con
 	 * @param bookType
 	 * @return
@@ -50,7 +50,7 @@ public class BookTypeDao {
 
 
 	/**
-	 * É¾³ıÍ¼ÊéÀà±ğ
+	 * åˆ é™¤å›¾ä¹¦ç±»åˆ«
 	 * @param con
 	 * @param id
 	 * @return
@@ -65,7 +65,7 @@ public class BookTypeDao {
 
 
 	/**
-	 * ¸üĞÂÍ¼ÊéÀà±ğ
+	 * æ›´æ–°å›¾ä¹¦ç±»åˆ«
 	 * @param con
 	 * @param bookType
 	 * @return
