@@ -1,24 +1,24 @@
 package com.java1234.model;
 
 /**
- * ÓÃ»§ÊµÌå
+ * ç”¨æˆ·å®ä½“
  * @author s1841
  *
  */
 public class User {
 
-	private int id;				//±àºÅ
-	private String userName;	//ÓÃ»§Ãû
-	private String Password;	//ÃÜÂë
-	
-	
+	private int id;				//ç¼–å·
+	private String userName;	//ç”¨æˆ·å
+	private String Password;	//å¯†ç 
+
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
+
+
+
 	public User(String userName, String password) {
 		super();
 		this.userName = userName;
@@ -29,7 +29,7 @@ public class User {
 
 	public int getId() {
 		return id;
-	}	
+	}
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -45,6 +45,6 @@ public class User {
 	public void setPassword(String password) {
 		Password = password;
 	}
-	
-	
+
+
 }

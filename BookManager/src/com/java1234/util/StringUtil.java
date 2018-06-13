@@ -1,7 +1,7 @@
 package com.java1234.util;
 
 /**
- * ×Ö·û´®¹¤¾ßÀà
+ * å­—ç¬¦ä¸²å·¥å…·ç±»
  * @author s1841
  *
  */
@@ -14,10 +14,10 @@ public class StringUtil {
 			return false;
 		}
 	}
-	
-	
+
+
 	/**
-	 * ÅĞ¶Ï¿Õ·ñ
+	 * åˆ¤æ–­ç©ºå¦
 	 * @param str
 	 * @return
 	 */

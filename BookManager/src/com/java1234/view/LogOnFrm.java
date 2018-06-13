@@ -30,7 +30,7 @@ public class LogOnFrm extends JFrame {
 	private JPanel contentPane;
 	private JTextField userNameTxt;
 	private JPasswordField passwordTxt;
-	
+
 	private DbUtil dbUtil=new DbUtil();
 	private UserDao userDao=new UserDao();
 
@@ -54,7 +54,7 @@ public class LogOnFrm extends JFrame {
 	 * Create the frame.
 	 */
 	public LogOnFrm() {
-		//∏ƒ±‰œµÕ≥ƒ¨»œ◊÷ÃÂ
+		//ÊîπÂèòÁ≥ªÁªüÈªòËÆ§Â≠ó‰Ωì
 		Font font = new Font("Dialog", Font.PLAIN, 12);
 		java.util.Enumeration keys = UIManager.getDefaults().keys();
 		while (keys.hasMoreElements()) {
@@ -72,22 +72,22 @@ public class LogOnFrm extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
+
 		JLabel label = new JLabel("\u56FE\u4E66\u7BA1\u7406\u7CFB\u7EDF");
-		label.setFont(new Font("ÀŒÃÂ", Font.BOLD, 24));
+		label.setFont(new Font("ÂÆã‰Ωì", Font.BOLD, 24));
 		label.setIcon(new ImageIcon(LogOnFrm.class.getResource("/images/logo.png")));
-		
+
 		JLabel label_1 = new JLabel("\u7528\u6237\u540D:");
 		label_1.setIcon(new ImageIcon(LogOnFrm.class.getResource("/images/userName.png")));
-		
+
 		JLabel label_2 = new JLabel("\u5BC6  \u7801:");
 		label_2.setIcon(new ImageIcon(LogOnFrm.class.getResource("/images/password.png")));
-		
+
 		userNameTxt = new JTextField();
 		userNameTxt.setColumns(10);
-		
+
 		passwordTxt = new JPasswordField();
-		
+
 		JButton button = new JButton("\u767B\u9646");
 		button.setIcon(new ImageIcon(LogOnFrm.class.getResource("/images/login.png")));
 		button.addActionListener(new ActionListener() {
@@ -95,7 +95,7 @@ public class LogOnFrm extends JFrame {
 				loginActionPerfprmed(e);
 			}
 		});
-		
+
 		JButton button_1 = new JButton("\u91CD\u7F6E");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -105,51 +105,51 @@ public class LogOnFrm extends JFrame {
 		button_1.setIcon(new ImageIcon(LogOnFrm.class.getResource("/images/reset.png")));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(96)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(label)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-							.addComponent(button_1)
-							.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+				gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+								.addGap(96)
 								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-									.addComponent(button)
-									.addComponent(label_2)
-									.addComponent(label_1))
-								.addPreferredGap(ComponentPlacement.UNRELATED)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-									.addComponent(userNameTxt)
-									.addComponent(passwordTxt, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)))))
-					.addContainerGap(76, Short.MAX_VALUE))
+										.addComponent(label)
+										.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+												.addComponent(button_1)
+												.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+														.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+																.addComponent(button)
+																.addComponent(label_2)
+																.addComponent(label_1))
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+																.addComponent(userNameTxt)
+																.addComponent(passwordTxt, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)))))
+								.addContainerGap(76, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(label)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(userNameTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(label_1))
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(passwordTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(label_2))
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(button_1)
-						.addComponent(button))
-					.addContainerGap(39, Short.MAX_VALUE))
+				gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(label)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+										.addComponent(userNameTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(label_1))
+								.addGap(18)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+										.addComponent(passwordTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(label_2))
+								.addGap(18)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+										.addComponent(button_1)
+										.addComponent(button))
+								.addContainerGap(39, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
-		
-		//…Ë÷√JFrameæ”÷–œ‘ æ£®nullƒ¨»œæ”÷–£©
+
+		//ËÆæÁΩÆJFrameÂ±Ö‰∏≠ÊòæÁ§∫ÔºànullÈªòËÆ§Â±Ö‰∏≠Ôºâ
 		this.setLocationRelativeTo(null);
 	}
 
 	/**
-	 * µ«¬º ¬º˛¥¶¿Ì
+	 * ÁôªÂΩï‰∫ã‰ª∂Â§ÑÁêÜ
 	 * @param e
 	 */
 	private void loginActionPerfprmed(ActionEvent e) {
@@ -157,11 +157,11 @@ public class LogOnFrm extends JFrame {
 		String userName=this.userNameTxt.getText();
 		String password=new String(this.passwordTxt.getPassword());
 		if(StringUtil.isEmpty(userName)){
-			JOptionPane.showMessageDialog(null,"”√ªß√˚≤ªƒ‹Œ™ø’£°");
+			JOptionPane.showMessageDialog(null,"Áî®Êà∑Âêç‰∏çËÉΩ‰∏∫Á©∫ÔºÅ");
 			return;
 		}
 		if(StringUtil.isEmpty(password)){
-			JOptionPane.showMessageDialog(null, "√‹¬Î≤ªƒ‹Œ™ø’£°");
+			JOptionPane.showMessageDialog(null, "ÂØÜÁ†Å‰∏çËÉΩ‰∏∫Á©∫ÔºÅ");
 			return;
 		}
 		User user=new User(userName,password);
@@ -172,9 +172,9 @@ public class LogOnFrm extends JFrame {
 			if(currentUser!=null){
 				dispose();
 				new MainFrm().setVisible(true);
-				//JOptionPane.showMessageDialog(null, "µ«¬Ω≥…π¶£°");
+				//JOptionPane.showMessageDialog(null, "ÁôªÈôÜÊàêÂäüÔºÅ");
 			}else{
-				JOptionPane.showMessageDialog(null, "”√ªß√˚ªÚ√‹¬Î¥ÌŒÛ£°");
+				JOptionPane.showMessageDialog(null, "Áî®Êà∑ÂêçÊàñÂØÜÁ†ÅÈîôËØØÔºÅ");
 			}
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
@@ -190,8 +190,8 @@ public class LogOnFrm extends JFrame {
 	}
 
 	/**
-	 * ÷ÿ÷√ ¬º˛¥¶¿Ì
-	 * @param e
+	 * ÈáçÁΩÆ‰∫ã‰ª∂Â§ÑÁêÜ
+	 * @param
 	 */
 	private void resetValueActionPerfprmed(ActionEvent evt) {
 		// TODO Auto-generated method stub

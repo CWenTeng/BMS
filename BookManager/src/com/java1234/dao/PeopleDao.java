@@ -9,7 +9,7 @@ import com.java1234.util.StringUtil;
 
 
 /**
- * ½èÔÄ»áÔ±DaoÀà
+ * å€Ÿé˜…ä¼šå‘˜Daoç±»
  * @author s1841
  *
  */
@@ -23,7 +23,7 @@ public class PeopleDao {
 		pstmt.setInt(3, people.getPeopleAge());
 		pstmt.setString(4, people.getPeopleSex());
 		pstmt.setString(5, people.getPeopleBranch());
-		
+
 		return pstmt.executeUpdate();
 	}
 

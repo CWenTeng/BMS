@@ -26,11 +26,11 @@ public class BookTypeDao {
 		String sql="insert into t_bookType values(null,?,?)";
 		PreparedStatement pstmt=con.prepareStatement(sql);
 		pstmt.setString(1, bookType.getBookTypeName());
-		pstmt.setString(2, bookType.getBookTypeDesc());	
+		pstmt.setString(2, bookType.getBookTypeDesc());
 		return pstmt.executeUpdate();
 	}
-	
-	
+
+
 	/**
 	 * 查询图书类别集合
 	 * @param con
@@ -44,11 +44,11 @@ public class BookTypeDao {
 			sb.append(" and bookTypeName like '%"+bookType.getBookTypeName()+"%'");
 		}
 		PreparedStatement pstmt=con.prepareStatement(sb.toString().replaceFirst("and", "where"));
-		
+
 		return pstmt.executeQuery();
 	}
-	
-	
+
+
 	/**
 	 * 删除图书类别
 	 * @param con
@@ -62,8 +62,8 @@ public class BookTypeDao {
 		pstmt.setString(1, id);
 		return pstmt.executeUpdate();
 	}
-	
-	
+
+
 	/**
 	 * 更新图书类别
 	 * @param con

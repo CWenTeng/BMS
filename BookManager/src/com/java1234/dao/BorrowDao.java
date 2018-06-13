@@ -11,7 +11,7 @@ import com.java1234.model.Borrow;
 public class BorrowDao {
 
 	/**
-	 * 借阅信息添加
+	 * 鍊熼槄淇℃伅娣诲姞
 	 * @param con
 	 * @param borrow
 	 * @return
@@ -22,12 +22,12 @@ public class BorrowDao {
 		PreparedStatement pstmt=con.prepareStatement(sql);
 //		pstmt.setString(0, borrow.getPeopleId());
 //		pstmt.setString(1, borrow.getBookId());
-		
+
 		return pstmt.executeUpdate();
 	}
-	
+
 	/**
-	 * 点击查询对应借阅图书
+	 * 鐐瑰嚮鏌ヨ瀵瑰簲鍊熼槄鍥句功
 	 * @param con
 	 * @param p
 	 * @return
@@ -39,10 +39,10 @@ public class BorrowDao {
 		pstmt.setString(1, p);
 		return pstmt.executeQuery();
 	}
-	
-	
+
+
 	/**
-	 * 图书归还
+	 * 鍥句功褰掕繕
 	 * @param con
 	 * @param id
 	 * @return
@@ -54,9 +54,9 @@ public class BorrowDao {
 		pstmt.setString(1, id);
 		return pstmt.executeUpdate();
 	}
-	
+
 	/**
-	 * 图书丢失
+	 * 鍥句功涓㈠け
 	 * @param con
 	 * @param id
 	 * @return
@@ -74,9 +74,9 @@ public class BorrowDao {
 			e.printStackTrace();
 			return -1;
 		}
-		
-		
+
+
 	}
-	
-	
+
+
 }

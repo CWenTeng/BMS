@@ -4,7 +4,7 @@ public class Borrow {
 
 	private String peopleId;
 	private String bookId;
-	
+
 	public Borrow(String peopleId, String bookId) {
 		super();
 		this.peopleId = peopleId;
@@ -22,6 +22,6 @@ public class Borrow {
 	public void setBookId(String bookId) {
 		this.bookId = bookId;
 	}
-	
-	
+
+
 }

@@ -172,7 +172,7 @@ public class BorrowerAdd extends JInternalFrame {
 	
 	
 	/**
-	 * Í¼ÊéÌí¼ÓÊÂ¼ş´¦Àí
+	 * å›¾ä¹¦æ·»åŠ äº‹ä»¶å¤„ç†
 	 * @param e
 	 */
 	private void BorrowerAddActionPerformde(ActionEvent e) {
@@ -182,45 +182,45 @@ public class BorrowerAdd extends JInternalFrame {
 		String PeopleAge=this.PeopleAgeTxt.getText();
 		String PeopleBranch=this.PeopleBranchTxt.getText();
 		if(StringUtil.isEmpty(PeopleID)){
-			JOptionPane.showMessageDialog(null, "ID²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null, "IDä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(PeopleName)){
-			JOptionPane.showMessageDialog(null, "ĞÕÃû²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null, "å§“åä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(PeopleAge)){
-			JOptionPane.showMessageDialog(null, "ÄêÁä²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null, "å¹´é¾„ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(PeopleBranch)){
-			JOptionPane.showMessageDialog(null, "²¿ÃÅ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null, "éƒ¨é—¨ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
-		
+
 		String sex="";
 		if(manJrb.isSelected()){
-			sex="ÄĞ";
+			sex="ç”·";
 		}else if(femaleJrb.isSelected()){
-			sex="Å®";
+			sex="å¥³";
 		}
-		
+
 		People people=new People(PeopleID ,  PeopleName,  Integer.parseInt(PeopleAge), sex, PeopleBranch);
-		
+
 		Connection con=null;
 		try {
 			con=dbUtil.getCon();
 			int addpeople=peopleDao.add(con,people);
 			if(addpeople==1){
-				JOptionPane.showMessageDialog(null, "Ìí¼Ó³É¹¦£¡");
+				JOptionPane.showMessageDialog(null, "æ·»åŠ æˆåŠŸï¼");
 				resetValue();
 			}else{
-				JOptionPane.showMessageDialog(null, "Ìí¼ÓÊ§°Ü£¡");				
+				JOptionPane.showMessageDialog(null, "æ·»åŠ å¤±è´¥ï¼");
 			}
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Ìí¼ÓÊ§°Ü£¡");	
+			JOptionPane.showMessageDialog(null, "æ·»åŠ å¤±è´¥ï¼");
 		}finally{
 			try {
 				dbUtil.closeCon(con);
@@ -232,7 +232,7 @@ public class BorrowerAdd extends JInternalFrame {
 	}
 
 	/**
-	 * ÖØÖÃÊÂ¼ş´¦Àí
+	 * é‡ç½®äº‹ä»¶å¤„ç†
 	 * @param e
 	 */
 	private void resetValueActionPerformed(ActionEvent e) {
@@ -241,7 +241,7 @@ public class BorrowerAdd extends JInternalFrame {
 	}
 
 	/**
-	 * ÖØÖÃ±íµ¥
+	 * é‡ç½®è¡¨å•
 	 */
 	private void resetValue(){
 		this.PeopleIDTxt.setText("");

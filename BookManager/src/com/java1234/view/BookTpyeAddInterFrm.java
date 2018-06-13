@@ -25,7 +25,7 @@ import com.java1234.util.StringUtil;
 public class BookTpyeAddInterFrm extends JInternalFrame {
 	private JTextField bookTypeNameTxt;
 	private JTextArea bookTypeDescTxt;
-	
+
 	private DbUtil dbUtil=new DbUtil();
 	private BookTypeDao bookTypeDao=new BookTypeDao();
 
@@ -53,13 +53,13 @@ public class BookTpyeAddInterFrm extends JInternalFrame {
 		setIconifiable(true);
 		setTitle("\u56FE\u4E66\u7C7B\u522B\u6DFB\u52A0");
 		setBounds(100, 100, 613, 441);
-		
+
 		JLabel label = new JLabel("\u56FE\u4E66\u7C7B\u522B\u540D\u79F0\uFF1A");
-		
+
 		JLabel label_1 = new JLabel("\u56FE\u4E66\u7C7B\u522B\u63CF\u8FF0\uFF1A");
-		
+
 		bookTypeDescTxt = new JTextArea();
-		
+
 		JButton button = new JButton("\u6DFB\u52A0");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -67,7 +67,7 @@ public class BookTpyeAddInterFrm extends JInternalFrame {
 			}
 		});
 		button.setIcon(new ImageIcon(BookTpyeAddInterFrm.class.getResource("/images/add.png")));
-		
+
 		JButton button_1 = new JButton("\u91CD\u7F6E");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -75,65 +75,65 @@ public class BookTpyeAddInterFrm extends JInternalFrame {
 			}
 		});
 		button_1.setIcon(new ImageIcon(BookTpyeAddInterFrm.class.getResource("/images/reset.png")));
-		
+
 		bookTypeNameTxt = new JTextField();
 		bookTypeNameTxt.setColumns(10);
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(66)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+				groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(label)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(bookTypeNameTxt, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(label_1)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(bookTypeDescTxt, GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(button)
-									.addPreferredGap(ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
-									.addComponent(button_1)))))
-					.addGap(141))
+								.addGap(66)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(label)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(bookTypeNameTxt, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))
+										.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(label_1)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+														.addComponent(bookTypeDescTxt, GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+														.addGroup(groupLayout.createSequentialGroup()
+																.addComponent(button)
+																.addPreferredGap(ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+																.addComponent(button_1)))))
+								.addGap(141))
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(65)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(label)
-						.addComponent(bookTypeNameTxt, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
-					.addGap(30)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(label_1)
-						.addComponent(bookTypeDescTxt, GroupLayout.PREFERRED_SIZE, 172, GroupLayout.PREFERRED_SIZE))
-					.addGap(39)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(button_1)
-						.addComponent(button))
-					.addContainerGap(62, Short.MAX_VALUE))
+				groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+								.addGap(65)
+								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(label)
+										.addComponent(bookTypeNameTxt, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
+								.addGap(30)
+								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(label_1)
+										.addComponent(bookTypeDescTxt, GroupLayout.PREFERRED_SIZE, 172, GroupLayout.PREFERRED_SIZE))
+								.addGap(39)
+								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(button_1)
+										.addComponent(button))
+								.addContainerGap(62, Short.MAX_VALUE))
 		);
 		getContentPane().setLayout(groupLayout);
-		
-		//…Ë÷√Œƒ±æ”Ú±ﬂøÚ
+
+		//ËÆæÁΩÆÊñáÊú¨ÂüüËæπÊ°Ü
 		bookTypeDescTxt.setBorder(new LineBorder(new java.awt.Color(127,157,185), 1, false));
 
 	}
-	
+
 	/**
-	 * Õº È¿‡±ÃÌº” ¬º˛¥¶¿Ì
+	 * Âõæ‰π¶Á±ªÂà´Ê∑ªÂä†‰∫ã‰ª∂Â§ÑÁêÜ
 	 * @param e
 	 */
 	private void bookTypeAddActionPerformed(ActionEvent evt) {
 		// TODO Auto-generated method stub
-		
+
 		String bookTypeName=this.bookTypeNameTxt.getText();
 		String bookTypeDesc=this.bookTypeDescTxt.getText();
 		if(StringUtil.isEmpty(bookTypeName)){
-			JOptionPane.showMessageDialog(null, "Õº È¿‡±≤ªƒ‹Œ™ø’£°");
+			JOptionPane.showMessageDialog(null, "Âõæ‰π¶Á±ªÂà´‰∏çËÉΩ‰∏∫Á©∫ÔºÅ");
 			return;
 		}
 		BookType bookType=new BookType(bookTypeName,bookTypeDesc);
@@ -142,14 +142,14 @@ public class BookTpyeAddInterFrm extends JInternalFrame {
 			con=dbUtil.getCon();
 			int n=bookTypeDao.add(con, bookType);
 			if(n==1){
-				JOptionPane.showMessageDialog(null, "Õº È¿‡±ÃÌº”≥…π¶£°");
+				JOptionPane.showMessageDialog(null, "Âõæ‰π¶Á±ªÂà´Ê∑ªÂä†ÊàêÂäüÔºÅ");
 				resetValue();
 			}else{
-				JOptionPane.showMessageDialog(null, "Õº È¿‡±ÃÌº” ß∞‹£°");
+				JOptionPane.showMessageDialog(null, "Âõæ‰π¶Á±ªÂà´Ê∑ªÂä†Â§±Ë¥•ÔºÅ");
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Õº È¿‡±ÃÌº” ß∞‹£°");
+			JOptionPane.showMessageDialog(null, "Âõæ‰π¶Á±ªÂà´Ê∑ªÂä†Â§±Ë¥•ÔºÅ");
 		}finally{
 			try {
 				dbUtil.closeCon(con);
@@ -157,18 +157,18 @@ public class BookTpyeAddInterFrm extends JInternalFrame {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
 	}
 
 	/**
-	 * ÷ÿ÷√ ¬º˛¥¶¿Ì
+	 * ÈáçÁΩÆ‰∫ã‰ª∂Â§ÑÁêÜ
 	 * @param evt
 	 */
 	private void resetValueActionPerformed(ActionEvent evt) {
 		// TODO Auto-generated method stub
 		this.resetValue();
-		
+
 	}
 
 	private void resetValue(){

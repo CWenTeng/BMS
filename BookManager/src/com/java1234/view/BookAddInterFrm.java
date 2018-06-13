@@ -37,7 +37,7 @@ public class BookAddInterFrm extends JInternalFrame {
 	private JTextArea bookDescTxt;
 	private JRadioButton manJrb;
 	private JRadioButton femaleJrb;
-	
+
 	private DbUtil dbUtil=new DbUtil();
 	private BookTypeDao bookTypeDao=new BookTypeDao();
 	private BookDao bookDao=new BookDao();
@@ -66,38 +66,38 @@ public class BookAddInterFrm extends JInternalFrame {
 		setIconifiable(true);
 		setTitle("\u56FE\u4E66\u6DFB\u52A0");
 		setBounds(100, 100, 606, 459);
-		
+
 		JLabel label = new JLabel("\u56FE\u4E66\u540D\u79F0\uFF1A");
-		
+
 		bookNameTxt = new JTextField();
 		bookNameTxt.setColumns(10);
-		
+
 		JLabel lblNewLabel = new JLabel("\u56FE\u4E66\u4F5C\u8005\uFF1A");
-		
+
 		authorTxt = new JTextField();
 		authorTxt.setText(" ");
 		authorTxt.setColumns(10);
-		
+
 		JLabel label_1 = new JLabel("\u4F5C\u8005\u6027\u522B\uFF1A");
-		
+
 		manJrb = new JRadioButton("\u7537");
 		manJrb.setSelected(true);
 		buttonGroup.add(manJrb);
-		
+
 		femaleJrb = new JRadioButton("\u5973");
 		buttonGroup.add(femaleJrb);
-		
+
 		JLabel label_2 = new JLabel("\u56FE\u4E66\u4EF7\u683C\uFF1A");
-		
+
 		priceTxt = new JTextField();
 		priceTxt.setColumns(10);
-		
+
 		JLabel label_3 = new JLabel("\u56FE\u4E66\u63CF\u8FF0\uFF1A");
-		
+
 		JLabel label_4 = new JLabel("\u56FE\u4E66\u7C7B\u522B\uFF1A");
-		
+
 		bookTypeJcb = new JComboBox();
-		
+
 		JButton button = new JButton("\u6DFB\u52A0");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -105,7 +105,7 @@ public class BookAddInterFrm extends JInternalFrame {
 			}
 		});
 		button.setIcon(new ImageIcon(BookAddInterFrm.class.getResource("/images/add.png")));
-		
+
 		JButton button_1 = new JButton("\u91CD\u7F6E");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -113,96 +113,96 @@ public class BookAddInterFrm extends JInternalFrame {
 			}
 		});
 		button_1.setIcon(new ImageIcon(BookAddInterFrm.class.getResource("/images/reset.png")));
-		
+
 		bookDescTxt = new JTextArea();
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addGap(25)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+				groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+								.addGap(25)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+										.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(label_4)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(bookTypeJcb, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+										.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(label)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(bookNameTxt, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE))
+										.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(label_1)
+												.addGap(30)
+												.addComponent(manJrb)
+												.addGap(44)
+												.addComponent(femaleJrb)))
+								.addGap(18)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+										.addComponent(lblNewLabel)
+										.addComponent(label_2))
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(authorTxt, GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+										.addComponent(priceTxt, 132, 132, 132))
+								.addContainerGap(31, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(label_4)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(bookTypeJcb, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(label)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(bookNameTxt, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(label_1)
-							.addGap(30)
-							.addComponent(manJrb)
-							.addGap(44)
-							.addComponent(femaleJrb)))
-					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(lblNewLabel)
-						.addComponent(label_2))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(authorTxt, GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-						.addComponent(priceTxt, 132, 132, 132))
-					.addContainerGap(31, GroupLayout.PREFERRED_SIZE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(24)
-					.addComponent(label_3)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(button)
-							.addPreferredGap(ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-							.addComponent(button_1))
-						.addComponent(bookDescTxt, GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE))
-					.addGap(30))
+								.addGap(24)
+								.addComponent(label_3)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(button)
+												.addPreferredGap(ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+												.addComponent(button_1))
+										.addComponent(bookDescTxt, GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE))
+								.addGap(30))
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(26)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+				groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(label)
-								.addComponent(bookNameTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(18)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(label_1)
-								.addComponent(manJrb)
-								.addComponent(femaleJrb)))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblNewLabel)
-								.addComponent(authorTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(18)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(label_2)
-								.addComponent(priceTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
-					.addGap(29)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(label_4)
-						.addComponent(bookTypeJcb, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(label_3)
-						.addComponent(bookDescTxt, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(button)
-						.addComponent(button_1))
-					.addGap(22))
+								.addGap(26)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(groupLayout.createSequentialGroup()
+												.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+														.addComponent(label)
+														.addComponent(bookNameTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+												.addGap(18)
+												.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+														.addComponent(label_1)
+														.addComponent(manJrb)
+														.addComponent(femaleJrb)))
+										.addGroup(groupLayout.createSequentialGroup()
+												.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+														.addComponent(lblNewLabel)
+														.addComponent(authorTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+												.addGap(18)
+												.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+														.addComponent(label_2)
+														.addComponent(priceTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+								.addGap(29)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(label_4)
+										.addComponent(bookTypeJcb, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(label_3)
+										.addComponent(bookDescTxt, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE))
+								.addGap(18)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(button)
+										.addComponent(button_1))
+								.addGap(22))
 		);
 		getContentPane().setLayout(groupLayout);
-		
-		//…Ë÷√Œƒ±æ”Ú±ﬂøÚ
+
+		//ËÆæÁΩÆÊñáÊú¨ÂüüËæπÊ°Ü
 		bookDescTxt.setBorder(new LineBorder(new java.awt.Color(127,157,185), 1, false));
 
 		fillBookType();
 	}
-	
-	
+
+
 	/**
-	 * ÷ÿ÷√ ¬º˛¥¶¿Ì
+	 * ÈáçÁΩÆ‰∫ã‰ª∂Â§ÑÁêÜ
 	 * @param e
 	 */
 	private void resetValueActionPerformed(ActionEvent e) {
@@ -211,7 +211,7 @@ public class BookAddInterFrm extends JInternalFrame {
 	}
 
 	/**
-	 * Õº ÈÃÌº” ¬º˛¥¶¿Ì
+	 * Âõæ‰π¶Ê∑ªÂä†‰∫ã‰ª∂Â§ÑÁêÜ
 	 * @param e
 	 */
 	private void bookAddActionPerformed(ActionEvent evt) {
@@ -220,46 +220,46 @@ public class BookAddInterFrm extends JInternalFrame {
 		String author=this.authorTxt.getText();
 		String price=this.priceTxt.getText();
 		String bookDesc=this.bookDescTxt.getText();
-		
+
 		if(StringUtil.isEmpty(bookName)){
-			JOptionPane.showMessageDialog(null, "Õº È√˚≥∆≤ªƒ‹Œ™ø’£°");
+			JOptionPane.showMessageDialog(null, "Âõæ‰π¶ÂêçÁß∞‰∏çËÉΩ‰∏∫Á©∫ÔºÅ");
 			return;
 		}
 		if(StringUtil.isEmpty(author)){
-			JOptionPane.showMessageDialog(null, "Õº È◊˜’ﬂ≤ªƒ‹Œ™ø’£°");
+			JOptionPane.showMessageDialog(null, "Âõæ‰π¶‰ΩúËÄÖ‰∏çËÉΩ‰∏∫Á©∫ÔºÅ");
 			return;
 		}
 		if(StringUtil.isEmpty(price)){
-			JOptionPane.showMessageDialog(null, "Õº Èº€∏Ò≤ªƒ‹Œ™ø’£°");
+			JOptionPane.showMessageDialog(null, "Âõæ‰π¶‰ª∑Ê†º‰∏çËÉΩ‰∏∫Á©∫ÔºÅ");
 			return;
 		}
-		
+
 		String sex="";
 		if(manJrb.isSelected()){
-			sex="ƒ–";
+			sex="Áî∑";
 		}else if(femaleJrb.isSelected()){
-			sex="≈Æ";
+			sex="Â•≥";
 		}
-		
+
 		BookType bookType=(BookType) bookTypeJcb.getSelectedItem();
 		int bookTypeId=bookType.getId();
-		
+
 		Book book=new Book( bookName,  author,  sex, Float.parseFloat(price) , bookTypeId, bookDesc);
-		
+
 		Connection con=null;
 		try{
 			con=dbUtil.getCon();
 			int addNum=bookDao.add(con, book);
 			if(addNum==1){
-				JOptionPane.showMessageDialog(null, "Õº ÈÃÌº”≥…π¶£°");
+				JOptionPane.showMessageDialog(null, "Âõæ‰π¶Ê∑ªÂä†ÊàêÂäüÔºÅ");
 				resetValue();
 			}else{
-				JOptionPane.showMessageDialog(null, "Õº ÈÃÌº” ß∞‹£°");
+				JOptionPane.showMessageDialog(null, "Âõæ‰π¶Ê∑ªÂä†Â§±Ë¥•ÔºÅ");
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Õº ÈÃÌº” ß∞‹£°");
-			}finally{
+			JOptionPane.showMessageDialog(null, "Âõæ‰π¶Ê∑ªÂä†Â§±Ë¥•ÔºÅ");
+		}finally{
 			try {
 				dbUtil.closeCon(con);
 			} catch (Exception e) {
@@ -268,10 +268,10 @@ public class BookAddInterFrm extends JInternalFrame {
 			}
 		}
 	}
-	
-	
+
+
 	/**
-	 * ÷ÿ÷√±Ìµ•
+	 * ÈáçÁΩÆË°®Âçï
 	 */
 	private void resetValue(){
 		this.bookNameTxt.setText("");
@@ -285,7 +285,7 @@ public class BookAddInterFrm extends JInternalFrame {
 	}
 
 	/**
-	 * ≥ı ºªØÕº È¿‡±œ¬¿≠øÚ
+	 * ÂàùÂßãÂåñÂõæ‰π¶Á±ªÂà´‰∏ãÊãâÊ°Ü
 	 */
 	private void fillBookType(){
 		Connection con=null;
@@ -302,7 +302,7 @@ public class BookAddInterFrm extends JInternalFrame {
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
-			
+
 		}
 	}
 }

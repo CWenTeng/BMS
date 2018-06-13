@@ -7,14 +7,14 @@ import java.sql.ResultSet;
 import com.java1234.model.User;
 
 /**
- * ÓÃ»§DaoÀà
+ * ç”¨æˆ·Daoç±»
  * @author s1841
  *
  */
 public class UserDao {
 
 	/**
-	 * µÇÂ½ÑéÖ¤
+	 * ç™»é™†éªŒè¯
 	 * @param con
 	 * @param user
 	 * @return

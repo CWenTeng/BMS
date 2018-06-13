@@ -2,32 +2,32 @@ package com.java1234.model;
 
 
 /*
- * Í¼ÊéÊµÌå
+ * å›¾ä¹¦å®ä½“
  */
 public class Book {
 
-	private int id;				//±àºÅ
-	private String bookName;	//Í¼ÊéÃû³Æ
-	private String author;		//×÷Õß
-	private	String sex;			//ĞÔ±ğ
-	private	Float price;		//Í¼Êé¼Û¸ñ
-	private Integer	bookTypeId;	//Í¼ÊéÀà±ğId
-	private	String bookTypeName;//Í¼ÊéÀà±ğÃû³Æ
-	private String bookDesc;	//±¸×¢
-	
-	
-	
-	
+	private int id;				//ç¼–å·
+	private String bookName;	//å›¾ä¹¦åç§°
+	private String author;		//ä½œè€…
+	private	String sex;			//æ€§åˆ«
+	private	Float price;		//å›¾ä¹¦ä»·æ ¼
+	private Integer	bookTypeId;	//å›¾ä¹¦ç±»åˆ«Id
+	private	String bookTypeName;//å›¾ä¹¦ç±»åˆ«åç§°
+	private String bookDesc;	//å¤‡æ³¨
+
+
+
+
 	public Book() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-	
+
+
+
+
 	public Book(String bookName, String author, String sex, Float price, Integer bookTypeId, String bookDesc) {
-		super();
+		super();//è°ƒç”¨çˆ¶ç±»çš„æ„é€ æ–¹æ³•
 		this.bookName = bookName;
 		this.author = author;
 		this.sex = sex;
@@ -111,7 +111,7 @@ public class Book {
 	public void setBookDesc(String bookDesc) {
 		this.bookDesc = bookDesc;
 	}
-	
-	
-	
+
+
+
 }

@@ -13,7 +13,7 @@ import com.java1234.util.StringUtil;
  *
  */
 public class BookDao {
-	
+
 	/**
 	 * 图书添加
 	 * @param con
@@ -30,11 +30,11 @@ public class BookDao {
 		pstmt.setFloat(4, book.getPrice());
 		pstmt.setInt(5, book.getBookTypeId());
 		pstmt.setString(6, book.getBookDesc());
-		
+
 		return pstmt.executeUpdate();
 	}
-	
-	
+
+
 	/**
 	 * 图书信息查询
 	 * @param con
@@ -57,8 +57,8 @@ public class BookDao {
 		return pstmt.executeQuery();
 
 	}
-	
-	
+
+
 	/**
 	 * 图书信息查询
 	 * @param con
@@ -81,8 +81,8 @@ public class BookDao {
 		return pstmt.executeQuery();
 
 	}
-	
-	
+
+
 	/**
 	 *图书信息删除	 
 	 * @param con
@@ -96,8 +96,8 @@ public class BookDao {
 		pstmt.setString(1, id);
 		return pstmt.executeUpdate();
 	}
-	
-	
+
+
 	/**
 	 * 图书信息修改
 	 * @param con
@@ -117,8 +117,8 @@ public class BookDao {
 		pstmt.setInt(7, book.getId());
 		return pstmt.executeUpdate();
 	}
-	
-	
+
+
 	/**
 	 * 指定图书类别下是否存在图书
 	 * @param con

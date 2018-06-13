@@ -45,14 +45,14 @@ public class Borrower extends JInternalFrame {
 	private JTextField bookNameTxt;
 	private JTextField authorTxt;
 	private JTable bookTable;
-	
+
 	private DbUtil dbUtil=new DbUtil();
 	private BookDao bookDao=new BookDao();
 	private BookTypeDao bookTypeDao=new BookTypeDao();
-	
+
 	private JComboBox bookTypeNameJrb;
 	private PeopleDao peopleDao=new PeopleDao();
-	
+
 	private BorrowDao borrowDao=new BorrowDao();
 	Book currentbook = new Book();
 	String bookid="",peopleid="",backbookid="";
@@ -79,33 +79,33 @@ public class Borrower extends JInternalFrame {
 		setClosable(true);
 		setTitle("\u501F\u9605\u4FE1\u606F");
 		setBounds(100, 100, 700, 722);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
-		
+
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(null, "\u5DF2\u501F\u56FE\u4E66", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel.setToolTipText("");
-		
+
 		JScrollPane scrollPane_2 = new JScrollPane();
-		
+
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "\u641C\u7D22\u6761\u4EF6", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		
+
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "\u641C\u7D22\u6761\u4EF6", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		
+
 		JLabel label_2 = new JLabel("\u56FE\u4E66\u540D\u79F0\uFF1A");
-		
+
 		bookNameTxt = new JTextField();
 		bookNameTxt.setColumns(10);
-		
+
 		JLabel label_3 = new JLabel("\u56FE\u4E66\u4F5C\u8005:");
-		
+
 		authorTxt = new JTextField();
 		authorTxt.setColumns(10);
-		
+
 		JLabel label_4 = new JLabel("\u56FE\u4E66\u7C7B\u578B:");
-		
+
 		JButton button_4 = new JButton("\u67E5\u8BE2");
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -113,76 +113,76 @@ public class Borrower extends JInternalFrame {
 			}
 		});
 		button_4.setIcon(new ImageIcon(Borrower.class.getResource("/images/search.png")));
-		
+
 		bookTypeNameJrb = new JComboBox();
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGap(10)
-					.addComponent(label_2)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(bookNameTxt, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_3)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(authorTxt, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_4)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(bookTypeNameJrb, 0, 80, Short.MAX_VALUE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(button_4)
-					.addContainerGap())
+				gl_panel_2.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_2.createSequentialGroup()
+								.addGap(10)
+								.addComponent(label_2)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(bookNameTxt, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(label_3)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(authorTxt, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(label_4)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(bookTypeNameJrb, 0, 80, Short.MAX_VALUE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(button_4)
+								.addContainerGap())
 		);
 		gl_panel_2.setVerticalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
-						.addComponent(button_4)
-						.addComponent(label_2)
-						.addComponent(bookNameTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(label_3)
-						.addComponent(authorTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(label_4)
-						.addComponent(bookTypeNameJrb, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+				gl_panel_2.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_2.createSequentialGroup()
+								.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
+										.addComponent(button_4)
+										.addComponent(label_2)
+										.addComponent(bookNameTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(label_3)
+										.addComponent(authorTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(label_4)
+										.addComponent(bookTypeNameJrb, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-							.addGap(26)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(panel_2, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
-								.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
-								.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 632, Short.MAX_VALUE)))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap(30, Short.MAX_VALUE)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(scrollPane_2, GroupLayout.PREFERRED_SIZE, 628, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 628, GroupLayout.PREFERRED_SIZE))))
-					.addGap(30))
+				groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+										.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+												.addGap(26)
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+														.addComponent(panel_2, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
+														.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
+														.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 632, Short.MAX_VALUE)))
+										.addGroup(groupLayout.createSequentialGroup()
+												.addContainerGap(30, Short.MAX_VALUE)
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+														.addComponent(scrollPane_2, GroupLayout.PREFERRED_SIZE, 628, GroupLayout.PREFERRED_SIZE)
+														.addComponent(panel, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 628, GroupLayout.PREFERRED_SIZE))))
+								.addGap(30))
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(scrollPane_2, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(192, Short.MAX_VALUE))
+				groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
+								.addGap(18)
+								.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(scrollPane_2, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE)
+								.addGap(18)
+								.addComponent(panel, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(192, Short.MAX_VALUE))
 		);
-		
+
 		bookTable = new JTable();
 		bookTable.addMouseListener(new MouseAdapter() {
 			@Override
@@ -191,14 +191,14 @@ public class Borrower extends JInternalFrame {
 			}
 		});
 		bookTable.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"\u7F16\u53F7", "\u56FE\u4E66\u540D\u79F0", "\u56FE\u4E66\u4F5C\u8005", "\u6027\u522B", "\u4EF7\u683C", "\u56FE\u4E66\u7C7B\u578B"
-			}
+				new Object[][] {
+				},
+				new String[] {
+						"\u7F16\u53F7", "\u56FE\u4E66\u540D\u79F0", "\u56FE\u4E66\u4F5C\u8005", "\u6027\u522B", "\u4EF7\u683C", "\u56FE\u4E66\u7C7B\u578B"
+				}
 		) {
 			boolean[] columnEditables = new boolean[] {
-				false, false, false, false, false, false
+					false, false, false, false, false, false
 			};
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
@@ -207,12 +207,12 @@ public class Borrower extends JInternalFrame {
 		bookTable.getColumnModel().getColumn(1).setPreferredWidth(118);
 		bookTable.getColumnModel().getColumn(3).setPreferredWidth(48);
 		scrollPane_2.setViewportView(bookTable);
-		
+
 		JLabel label = new JLabel("\u59D3\u540D\uFF1A");
-		
+
 		PeopleNameTxt = new JTextField();
 		PeopleNameTxt.setColumns(10);
-		
+
 		JButton button = new JButton("\u67E5\u8BE2");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -220,51 +220,51 @@ public class Borrower extends JInternalFrame {
 			}
 		});
 		button.setIcon(new ImageIcon(Borrower.class.getResource("/images/search.png")));
-		
+
 		JLabel lblId = new JLabel("ID\uFF1A");
-		
+
 		peopleIdTxt = new JTextField();
 		peopleIdTxt.setColumns(10);
-		
+
 		JLabel label_1 = new JLabel("\u90E8\u95E8\uFF1A");
-		
+
 		PeopleBranchTxt = new JTextField();
 		PeopleBranchTxt.setColumns(10);
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(34)
-					.addComponent(lblId)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(peopleIdTxt, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(label)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(PeopleNameTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(label_1)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(PeopleBranchTxt, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(button)
-					.addGap(25))
+				gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+								.addGap(34)
+								.addComponent(lblId)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(peopleIdTxt, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
+								.addGap(18)
+								.addComponent(label)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(PeopleNameTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGap(18)
+								.addComponent(label_1)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(PeopleBranchTxt, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
+								.addGap(18)
+								.addComponent(button)
+								.addGap(25))
 		);
 		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblId)
-						.addComponent(peopleIdTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(PeopleNameTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(label)
-						.addComponent(label_1)
-						.addComponent(PeopleBranchTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(button))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+				gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+								.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
+										.addComponent(lblId)
+										.addComponent(peopleIdTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(PeopleNameTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(label)
+										.addComponent(label_1)
+										.addComponent(PeopleBranchTxt, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(button))
+								.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel_1.setLayout(gl_panel_1);
-		
+
 		JButton button_1 = new JButton("\u5F52\u8FD8");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -272,7 +272,7 @@ public class Borrower extends JInternalFrame {
 			}
 		});
 		button_1.setIcon(new ImageIcon(Borrower.class.getResource("/images/reset.png")));
-		
+
 		JButton button_2 = new JButton("\u4E22\u5931");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -280,9 +280,9 @@ public class Borrower extends JInternalFrame {
 			}
 		});
 		button_2.setIcon(new ImageIcon(Borrower.class.getResource("/images/delete.png")));
-		
+
 		JScrollPane scrollPane_1 = new JScrollPane();
-		
+
 		borrowTable = new JTable();
 		borrowTable.addMouseListener(new MouseAdapter() {
 			@Override
@@ -291,14 +291,14 @@ public class Borrower extends JInternalFrame {
 			}
 		});
 		borrowTable.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"\u7F16\u53F7", "\u56FE\u4E66\u540D\u79F0", "\u4F5C\u8005", "\u6027\u522B", "\u4EF7\u683C", "\u56FE\u4E66\u7C7B\u522B"
-			}
+				new Object[][] {
+				},
+				new String[] {
+						"\u7F16\u53F7", "\u56FE\u4E66\u540D\u79F0", "\u4F5C\u8005", "\u6027\u522B", "\u4EF7\u683C", "\u56FE\u4E66\u7C7B\u522B"
+				}
 		) {
 			boolean[] columnEditables = new boolean[] {
-				false, true, true, true, true, true
+					false, true, true, true, true, true
 			};
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
@@ -308,7 +308,7 @@ public class Borrower extends JInternalFrame {
 		borrowTable.getColumnModel().getColumn(1).setPreferredWidth(122);
 		borrowTable.getColumnModel().getColumn(3).setPreferredWidth(50);
 		scrollPane_1.setViewportView(borrowTable);
-		
+
 		JButton button_3 = new JButton("\u6DFB\u52A0");
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -318,34 +318,34 @@ public class Borrower extends JInternalFrame {
 		button_3.setIcon(new ImageIcon(Borrower.class.getResource("/images/add.png")));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-						.addComponent(scrollPane_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
+				gl_panel.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(button_3)
-							.addPreferredGap(ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
-							.addComponent(button_1)
-							.addGap(152)
-							.addComponent(button_2)))
-					.addContainerGap())
+								.addContainerGap()
+								.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+										.addComponent(scrollPane_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
+										.addGroup(gl_panel.createSequentialGroup()
+												.addComponent(button_3)
+												.addPreferredGap(ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+												.addComponent(button_1)
+												.addGap(152)
+												.addComponent(button_2)))
+								.addContainerGap())
 		);
 		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap(30, Short.MAX_VALUE)
-					.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, 157, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-						.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-							.addComponent(button_2)
-							.addComponent(button_1))
-						.addComponent(button_3))
-					.addContainerGap())
+				gl_panel.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_panel.createSequentialGroup()
+								.addContainerGap(30, Short.MAX_VALUE)
+								.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, 157, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+										.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+												.addComponent(button_2)
+												.addComponent(button_1))
+										.addComponent(button_3))
+								.addContainerGap())
 		);
 		panel.setLayout(gl_panel);
-		
+
 		peopleTable = new JTable();
 		peopleTable.addMouseListener(new MouseAdapter() {
 			@Override
@@ -354,14 +354,14 @@ public class Borrower extends JInternalFrame {
 			}
 		});
 		peopleTable.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"\u7F16\u53F7", "\u59D3\u540D", "\u5E74\u9F84", "\u6027\u522B", "\u90E8\u95E8"
-			}
+				new Object[][] {
+				},
+				new String[] {
+						"\u7F16\u53F7", "\u59D3\u540D", "\u5E74\u9F84", "\u6027\u522B", "\u90E8\u95E8"
+				}
 		) {
 			boolean[] columnEditables = new boolean[] {
-				false, false, false, false, false
+					false, false, false, false, false
 			};
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
@@ -372,42 +372,42 @@ public class Borrower extends JInternalFrame {
 		peopleTable.getColumnModel().getColumn(4).setPreferredWidth(105);
 		scrollPane.setViewportView(peopleTable);
 		getContentPane().setLayout(groupLayout);
-		
+
 		this.BookTable(new Book());
 		this.PeopleTable(new People());
 		fillBookType();
 
 	}
-	
+
 
 	/**
-	 * Í¼Êé¶ªÊ§´¦Àí
+	 * å›¾ä¹¦ä¸¢å¤±å¤„ç†
 	 * @param e
 	 */
 	private void loseActionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(StringUtil.isEmpty(backbookid)){
-			JOptionPane.showMessageDialog(null, "ÇëÑ¡Ôñ¶ªÊ§µÄÍ¼Êé");
+			JOptionPane.showMessageDialog(null, "è¯·é€‰æ‹©ä¸¢å¤±çš„å›¾ä¹¦");
 			return;
 		}
-		int n=JOptionPane.showConfirmDialog(null, "È·¶¨É¾³ı¸Ã¼ÇÂ¼Âğ£¿");
+		int n=JOptionPane.showConfirmDialog(null, "ç¡®å®šåˆ é™¤è¯¥è®°å½•å—ï¼Ÿ");
 		if(n==0){
 			Connection con=null;
 			try {
 				con=dbUtil.getCon();
 				int loseNum=borrowDao.lose(con, backbookid);
 				if(loseNum>0){
-					JOptionPane.showMessageDialog(null, "³É¹¦É¾³ı");
+					JOptionPane.showMessageDialog(null, "æˆåŠŸåˆ é™¤");
 					backbookid="";
 				}else if(loseNum==0){
-					JOptionPane.showMessageDialog(null, "ÎŞÉ¾³ı¼ÇÂ¼");
+					JOptionPane.showMessageDialog(null, "æ— åˆ é™¤è®°å½•");
 				}else if(loseNum==-1){
-					JOptionPane.showMessageDialog(null, "É¾³ıÊ§°Ü");
+					JOptionPane.showMessageDialog(null, "åˆ é™¤å¤±è´¥");
 				}
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-				JOptionPane.showMessageDialog(null, "É¾³ıÊ§°Ü");
+				JOptionPane.showMessageDialog(null, "åˆ é™¤å¤±è´¥");
 			}finally{
 				this.BookTable(new Book());
 				this.BorrowTable();
@@ -421,15 +421,15 @@ public class Borrower extends JInternalFrame {
 		}
 	}
 
-	
+
 	/**
-	 * Í¼Êé¹é»¹ÊÂ¼ş´¦Àí
+	 * å›¾ä¹¦å½’è¿˜äº‹ä»¶å¤„ç†
 	 * @param e
 	 */
 	private void backActionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(StringUtil.isEmpty(backbookid)){
-			JOptionPane.showMessageDialog(null, "ÇëÑ¡ÔñÒª¹é»¹µÄÍ¼Êé");
+			JOptionPane.showMessageDialog(null, "è¯·é€‰æ‹©è¦å½’è¿˜çš„å›¾ä¹¦");
 			return;
 		}
 		Connection con=null;
@@ -437,17 +437,17 @@ public class Borrower extends JInternalFrame {
 			con=dbUtil.getCon();
 			int backNum=borrowDao.back(con, backbookid);
 			if(backNum==1){
-				JOptionPane.showMessageDialog(null, "³É¹¦¹é»¹");
+				JOptionPane.showMessageDialog(null, "æˆåŠŸå½’è¿˜");
 				backbookid="";
 				this.BorrowTable();
 				this.BookTable(new Book());
 			}else{
-				JOptionPane.showMessageDialog(null, "¹é»¹Ê§°Ü");
+				JOptionPane.showMessageDialog(null, "å½’è¿˜å¤±è´¥");
 			}
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-			JOptionPane.showMessageDialog(null, "¹é»¹Ê§°Ü");
+			JOptionPane.showMessageDialog(null, "å½’è¿˜å¤±è´¥");
 		}finally{
 			try {
 				dbUtil.closeCon(con);
@@ -456,12 +456,12 @@ public class Borrower extends JInternalFrame {
 				e1.printStackTrace();
 			}
 		}
-		
+
 	}
 
-	
+
 	/**
-	 * Í¼Êé½èÔÄĞÅÏ¢Ìí¼Ó´¦Àí
+	 * å›¾ä¹¦å€Ÿé˜…ä¿¡æ¯æ·»åŠ å¤„ç†
 	 * @param e
 	 */
 	private void addActionPerformed(ActionEvent e) {
@@ -470,34 +470,34 @@ public class Borrower extends JInternalFrame {
 		String peopleId=this.peopleid;
 
 		if(StringUtil.isEmpty(peopleId)){
-			JOptionPane.showMessageDialog(null, "ÇëÑ¡Ôñ½èÔÄ»áÔ±");
+			JOptionPane.showMessageDialog(null, "è¯·é€‰æ‹©å€Ÿé˜…ä¼šå‘˜");
 			return;
 		}
 
 		if(StringUtil.isEmpty(bookId)){
-			JOptionPane.showMessageDialog(null, "ÇëÑ¡Ôñ½èÔÄÍ¼Êé");
+			JOptionPane.showMessageDialog(null, "è¯·é€‰æ‹©å€Ÿé˜…å›¾ä¹¦");
 			return;
 		}
 		Borrow borrow=new Borrow(peopleId, bookId);
-		
+
 		Connection con=null;
 		try {
 			con=dbUtil.getCon();
 			int addNum=borrowDao.add(con, borrow);
 			if(addNum==1){
-				JOptionPane.showMessageDialog(null, "Ìí¼Ó³É¹¦");
+				JOptionPane.showMessageDialog(null, "æ·»åŠ æˆåŠŸ");
 				bookid="";
 				this.BorrowTable();
 				this.BookTable(new Book());
 				return;
 			}else{
-				JOptionPane.showMessageDialog(null, "Ìí¼ÓÊ§°Ü");
+				JOptionPane.showMessageDialog(null, "æ·»åŠ å¤±è´¥");
 				return;
 			}
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Ìí¼ÓÊ§°Ü");
+			JOptionPane.showMessageDialog(null, "æ·»åŠ å¤±è´¥");
 		}finally{
 			try {
 				dbUtil.closeCon(con);
@@ -510,7 +510,7 @@ public class Borrower extends JInternalFrame {
 
 
 	/**
-	 * Í¼ÊéĞÅÏ¢µã»÷´¦Àí
+	 * å›¾ä¹¦ä¿¡æ¯ç‚¹å‡»å¤„ç†
 	 * @param e
 	 */
 	private void bookMousePressed(MouseEvent e) {
@@ -518,11 +518,11 @@ public class Borrower extends JInternalFrame {
 		int row=this.bookTable.getSelectedRow();
 		//String b=(String) bookTable.getValueAt(row, 0);
 		this.bookid=(String) bookTable.getValueAt(row, 0);
-		
+
 	}
 
 	/**
-	 * ½èÔÄÈËÔ±µã»÷´¦Àí
+	 * å€Ÿé˜…äººå‘˜ç‚¹å‡»å¤„ç†
 	 * @param e
 	 */
 	private void peopleMousePressed(MouseEvent e) {
@@ -533,10 +533,10 @@ public class Borrower extends JInternalFrame {
 		backbookid="";
 		this.BorrowTable();
 	}
-	
-	
+
+
 	/**
-	 * ½èÔÄÍ¼Êéµã»÷´¦Àí
+	 * å€Ÿé˜…å›¾ä¹¦ç‚¹å‡»å¤„ç†
 	 * @param e
 	 */
 	private void borrowMousePressed(MouseEvent e) {
@@ -545,11 +545,11 @@ public class Borrower extends JInternalFrame {
 		//String w=(String) borrowTable.getValueAt(row, 0);
 		this.backbookid=(String) borrowTable.getValueAt(row, 0);
 	}
-	
+
 
 
 	/**
-	 * ½èÔÄÈËÔ±²éÑ¯
+	 * å€Ÿé˜…äººå‘˜æŸ¥è¯¢
 	 * @param e
 	 */
 	private void peopleActionPerformed(ActionEvent e) {
@@ -557,13 +557,13 @@ public class Borrower extends JInternalFrame {
 		String peopleId=this.peopleIdTxt.getText();
 		String peopleName=this.PeopleNameTxt.getText();
 		String peopleBranch=this.PeopleBranchTxt.getText();
-		
+
 		People people=new People(peopleId,peopleName,peopleBranch);
 		this.PeopleTable(people);
 	}
 
 	/**
-	 * Í¼Êé²éÑ¯
+	 * å›¾ä¹¦æŸ¥è¯¢
 	 * @param e
 	 */
 	private void bookActionPerFormed(ActionEvent e) {
@@ -572,14 +572,14 @@ public class Borrower extends JInternalFrame {
 		String author=this.authorTxt.getText();
 		BookType bookType=(BookType) this.bookTypeNameJrb.getSelectedItem();
 		int bookTypeId=bookType.getId();
-		
+
 		Book book=new Book(bookName,author,bookTypeId);
 		this.BookTable(book);
 	}
 
-	
+
 	/**
-	 * ½èÔÄĞÅÏ¢²éÑ¯±í¸ñ
+	 * å€Ÿé˜…ä¿¡æ¯æŸ¥è¯¢è¡¨æ ¼
 	 */
 	private void BorrowTable(){
 		DefaultTableModel dtm=(DefaultTableModel) borrowTable.getModel();
@@ -589,7 +589,7 @@ public class Borrower extends JInternalFrame {
 			con=dbUtil.getCon();
 			ResultSet rs=borrowDao.list(con,this.peopleid);
 			while(rs.next()){
-				Vector v=new Vector();				
+				Vector v=new Vector();
 				v.add(rs.getString("id"));
 				v.add(rs.getString("bookName"));
 				v.add(rs.getString("author"));
@@ -610,13 +610,13 @@ public class Borrower extends JInternalFrame {
 			}
 		}
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	/**
-	 * ½èÔÄÈËÔ±±í¸ñ³õÊ¼»¯
+	 * å€Ÿé˜…äººå‘˜è¡¨æ ¼åˆå§‹åŒ–
 	 * @param people
 	 */
 	private void PeopleTable(People people){
@@ -647,20 +647,20 @@ public class Borrower extends JInternalFrame {
 			}
 		}
 	}
-	
+
 	/**
-	 * ³õÊ¼»¯Í¼Êé±í¸ñ
+	 * åˆå§‹åŒ–å›¾ä¹¦è¡¨æ ¼
 	 * @param book
 	 */
 	private void BookTable(Book book){
 		DefaultTableModel dtm=(DefaultTableModel) bookTable.getModel();
-		dtm.setRowCount(0); 				//ÉèÖÃ³É0ĞĞ
+		dtm.setRowCount(0); 				//è®¾ç½®æˆ0è¡Œ
 		Connection con=null;
 		try{
 			con=dbUtil.getCon();
 			ResultSet rs=bookDao.list(con,book);
 			while(rs.next()){
-				Vector v=new Vector();				
+				Vector v=new Vector();
 				v.add(rs.getString("id"));
 				v.add(rs.getString("bookName"));
 				v.add(rs.getString("author"));
@@ -680,20 +680,20 @@ public class Borrower extends JInternalFrame {
 			}
 		}
 	}
-	
-	
+
+
 	/**
-	 * ½èÔÄĞÅÏ¢
+	 * å€Ÿé˜…ä¿¡æ¯
 	 */
 	private void BorrowTable(String p,Book book){
 		DefaultTableModel dtm=(DefaultTableModel) peopleTable.getModel();
-		dtm.setRowCount(0); 				//ÉèÖÃ³É0ĞĞ
+		dtm.setRowCount(0); 				//è®¾ç½®æˆ0è¡Œ
 		Connection con=null;
 		try{
 			con=dbUtil.getCon();
 			ResultSet rs=bookDao.list(con,book);
 			while(rs.next()){
-				Vector v=new Vector();				
+				Vector v=new Vector();
 				v.add(rs.getString("id"));
 				v.add(rs.getString("bookName"));
 				v.add(rs.getString("author"));
@@ -713,38 +713,38 @@ public class Borrower extends JInternalFrame {
 			}
 		}
 	}
-	
+
 	/**
-	 * Í¼ÊéÀà±ğÏÂÀ­²Ëµ¥
+	 * å›¾ä¹¦ç±»åˆ«ä¸‹æ‹‰èœå•
 	 */
 	private void fillBookType(){
 		Connection con=null;
 		BookType bookType=null;
-		
-			try {
-				con=dbUtil.getCon();
-				ResultSet rs=bookTypeDao.list(con, new BookType());
+
+		try {
+			con=dbUtil.getCon();
+			ResultSet rs=bookTypeDao.list(con, new BookType());
+			bookType=new BookType();
+			bookType.setBookTypeName("è¯·é€‰æ‹©......");
+			bookType.setId(-1);
+			this.bookTypeNameJrb.addItem(bookType);
+			while(rs.next()){
 				bookType=new BookType();
-				bookType.setBookTypeName("ÇëÑ¡Ôñ......");
-				bookType.setId(-1);
+				bookType.setId(rs.getInt("id"));
+				bookType.setBookTypeName(rs.getString("bookTypeName"));
 				this.bookTypeNameJrb.addItem(bookType);
-				while(rs.next()){
-					bookType=new BookType();
-					bookType.setId(rs.getInt("id"));
-					bookType.setBookTypeName(rs.getString("bookTypeName"));
-					this.bookTypeNameJrb.addItem(bookType);
-				}
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				dbUtil.closeCon(con);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}finally{
-				try {
-					dbUtil.closeCon(con);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 			}
-			
+		}
+
 	}
 }

@@ -1,26 +1,26 @@
 package com.java1234.model;
 
 /**
- * 人员实体
+ * 浜哄憳瀹炰綋
  * @author s1841
  *
  */
 public class People {
-	private String id;					//编号
-	private String peopleName;		//姓名
-	private int peopleAge;			//年龄
-	private String peopleSex;		//性别
-	private String peopleBranch;	//部门
-	
-	
-	
+	private String id;					//缂栧彿
+	private String peopleName;		//濮撳悕
+	private int peopleAge;			//骞撮緞
+	private String peopleSex;		//鎬у埆
+	private String peopleBranch;	//閮ㄩ棬
+
+
+
 	public People(String id, String peopleName, String peopleBranch) {
 		super();
 		this.id = id;
 		this.peopleName = peopleName;
 		this.peopleBranch = peopleBranch;
 	}
-	
+
 	public String getId() {
 		return id;
 	}
@@ -65,7 +65,7 @@ public class People {
 		// TODO Auto-generated constructor stub
 	}
 
-	
+
 
 
 }

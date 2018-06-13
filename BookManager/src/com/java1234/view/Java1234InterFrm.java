@@ -40,24 +40,24 @@ public class Java1234InterFrm extends JInternalFrame {
 		setClosable(true);
 		setTitle("\u5173\u4E8ECWT");
 		setBounds(100, 100, 665, 375);
-		
+
 		JLabel lblCwt = new JLabel("CWT");
 		lblCwt.setForeground(new Color(240, 255, 255));
-		lblCwt.setFont(new Font("华文隶书", Font.PLAIN, 255));
+		lblCwt.setFont(new Font("鍗庢枃闅朵功", Font.PLAIN, 255));
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(35)
-					.addComponent(lblCwt, GroupLayout.PREFERRED_SIZE, 570, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(44, Short.MAX_VALUE))
+				groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+								.addGap(35)
+								.addComponent(lblCwt, GroupLayout.PREFERRED_SIZE, 570, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(44, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblCwt, GroupLayout.PREFERRED_SIZE, 297, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(29, Short.MAX_VALUE))
+				groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(lblCwt, GroupLayout.PREFERRED_SIZE, 297, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(29, Short.MAX_VALUE))
 		);
 		getContentPane().setLayout(groupLayout);
 
