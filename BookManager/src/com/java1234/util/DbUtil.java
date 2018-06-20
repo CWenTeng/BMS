@@ -16,7 +16,7 @@ public class DbUtil {
 	//用户名
 	private String dbUserName="root";
 	//密码
-	private String dbPassword="cwtsql";
+	private String dbPassword="root";
 	//mysql驱动包名
 	private String jdbcName="com.mysql.cj.jdbc.Driver";
 
